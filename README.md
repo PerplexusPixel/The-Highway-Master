@@ -8,4 +8,5 @@
 : Try not to die
 : Try to get as high of a score as possible 
 : This program is run by hopes and prayers, so if you encounter a bug, give me feedback on how I can fix it
-: Wait for at least 3 Seconds after the program is running.
+: Use Chrome for best results 
+: And lastly, Enjoy!
