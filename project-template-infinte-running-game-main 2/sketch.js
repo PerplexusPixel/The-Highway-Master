@@ -18,7 +18,7 @@ function preload(){
  car1img = loadImage("beetle.png")
  car2img = loadImage("—Pngtree—car top view image_8931232.png")
  roadImg = loadImage("Screenshot 2023-12-13 at 10.24.39 PM.png")
- car=createSprite(0,200);
+ car=createSprite(200,300);
  GameOverImg = loadImage("Screenshot 2023-12-15 at 11.17.30 AM.png")
 
 }
