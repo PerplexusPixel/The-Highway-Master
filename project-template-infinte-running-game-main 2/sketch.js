@@ -55,11 +55,6 @@ function setup() {
 }
 
 function draw() {
-
-
-
-
-
     
     if (keyDown(UP_ARROW)){
     speed=speed+4
@@ -83,7 +78,7 @@ if (keyDown(DOWN_ARROW)){
 
     console.log(speed)
     path.velocityY = speed/20
-    if(path.y > 400 ){
+    if(path.y > 500 ){
         path.y = height/2;
        
         score=score+2
