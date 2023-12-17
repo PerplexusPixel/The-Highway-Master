@@ -1,4 +1,6 @@
 # The-Highway-Master
+Instructions and Edits
+
 : To play, Use the arrow keys to accelerate and turn
 
 : Use The Down Arrow key to slow down your car
