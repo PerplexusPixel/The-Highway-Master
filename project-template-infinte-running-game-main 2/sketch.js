@@ -18,7 +18,7 @@ function preload(){
  car1img = loadImage("beetle.png")
  car2img = loadImage("—Pngtree—car top view image_8931232.png")
  roadImg = loadImage("Screenshot 2023-12-13 at 10.24.39 PM.png")
- car=createSprite(200,300);
+ car=createSprite(400,0);
  GameOverImg = loadImage("Screenshot 2023-12-15 at 11.17.30 AM.png")
 
 }
@@ -26,14 +26,14 @@ function preload(){
 function setup() {
     
     createCanvas(400,400)
-    score=6
+    score=0
     speed=0
     frame=0
     lives=40
     textalert=0
     path=createSprite(200,200);
     path.addImage(roadImg);
-    player=createSprite(100,300)
+    player=createSprite(200,300)
     player.addImage(playerImg)
     player.scale=0.08
      
@@ -44,7 +44,7 @@ function setup() {
     rightBoundary.visible = true
 
     GameOver=createSprite(200,200);
-    GameOver.addImage( GameOverImg);
+    GameOver.addImage(GameOverImg);
     GameOver.visible= false
     GameOver.scale=0.3
         
@@ -55,6 +55,11 @@ function setup() {
 }
 
 function draw() {
+
+
+
+
+
     
     if (keyDown(UP_ARROW)){
     speed=speed+4
@@ -78,19 +83,16 @@ if (keyDown(DOWN_ARROW)){
 
     console.log(speed)
     path.velocityY = speed/20
-    if(path.y > 500 ){
+    if(path.y > 400 ){
         path.y = height/2;
-       
+       if (speed >=60){
         score=score+2
-  
+       }
       }
     
       if (speed <= 0){
         speed=0
-        car.velocityY=-2
-        car.y=500
-        
-        
+  
         
       }
       if (speed > 1400){
@@ -105,9 +107,9 @@ if (path.velocityY>=0){
 }else if(path.velocityY==0){
   frame=1
 }
-spawncars();
+
 console.log(frame)
-if (player.isTouching(car)){
+if (player.collide(car)){
   car.visible=false
   path.destroy();
   car.destroy();
@@ -120,7 +122,7 @@ if (player.isTouching(car)){
   GameOver.visible= true
   GameOver.depth=car.depth+1
 }
-
+spawncars();
 
       drawSprites();
 
@@ -144,22 +146,29 @@ textSize(25);
 
 function spawncars(){
    
-  if (frame%200==0){
+  if (frame%200==0 && speed >=60){
  
     car=createSprite(0,200);
     car.x = 0    
-    car.y = 0 
+    car.y = -10 
     r=Math.round(random(1,2));
     if (r == 1) {
       car.addImage(car1img);
     } else if (r == 2) {
       car.addImage(car2img);
     }
+    
     car.x=Math.round(random(0,400));
     car.setLifetime=-1;
     car.scale=0.095
     car.velocityY=path.velocityY
-    car.setCollider('rectangle',0,0,45,50)
+    car.setCollider('rectangle',0,0,70,40)
+    car.visible=true
+
+    if (car.isTouching(car)){
+      car.destroy();
+    }
+    
 
     }
 
