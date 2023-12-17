@@ -1,4 +1,4 @@
-# project-template-infinte-running-game-main 2
+# The Highway Master
 
 Instructions and Edits
 
