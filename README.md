@@ -10,3 +10,9 @@
 : This program is run by hopes and prayers, so if you encounter a bug, give me feedback on how I can fix it
 : Use Chrome for best results 
 : And lastly, Enjoy!
+
+Edit: Fixed a bug in which the game will end if you turn left at the start. The position of the car sprite has been updated.
+Edit 2: Fixed ANOTHER bug where the cars would overlap each other
+
+Note: Now, Going Below 9MPH will not increase your score. So,Try going a bit faster
+ 
