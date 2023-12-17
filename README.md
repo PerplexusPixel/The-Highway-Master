@@ -1,4 +1,5 @@
-# The-Highway-Master
+# project-template-infinte-running-game-main 2
+
 Instructions and Edits
 
 : To play, Use the arrow keys to accelerate and turn
