@@ -1,3 +1,4 @@
+
 var path,roadImg
 var player,playerImg
 var speed
@@ -19,7 +20,8 @@ function preload(){
  car2img = loadImage("—Pngtree—car top view image_8931232.png")
  roadImg = loadImage("Screenshot 2023-12-13 at 10.24.39 PM.png")
  car=createSprite(400,0);
- GameOverImg = loadImage("Screenshot 2023-12-15 at 11.17.30 AM.png")
+ car.visible=false
+ GameOverImg = loadImage("GameOver.png")
 
 }
 
@@ -46,7 +48,7 @@ function setup() {
     GameOver=createSprite(200,200);
     GameOver.addImage(GameOverImg);
     GameOver.visible= false
-    GameOver.scale=0.3
+    GameOver.scale=1
         
   
 
@@ -118,7 +120,6 @@ if (player.collide(car)){
   frame = 101
   path.velocityY = 0
   speed = 0
-  textalert = 1
   GameOver.visible= true
   GameOver.depth=car.depth+1
 }
@@ -134,14 +135,6 @@ text("speed : "+ Math.round(speed/7)+"MPH",250,50);
 fill("white");
 textSize(25);
 text("score : "+ score,250,350);
-
-if (textalert==1){
-
-fill("black");
-textSize(25);
-  text("Your score was: "+ score,100,50);
-}
-
 }
 
 function spawncars(){
@@ -150,26 +143,26 @@ function spawncars(){
  
     car=createSprite(0,200);
     car.x = 0    
-    car.y = -10 
+    car.y = -40 
     r=Math.round(random(1,2));
     if (r == 1) {
       car.addImage(car1img);
+      car.scale=0.08
     } else if (r == 2) {
       car.addImage(car2img);
+      car.scale=0.1
     }
     
     car.x=Math.round(random(0,400));
     car.setLifetime=-1;
-    car.scale=0.095
+    
     car.velocityY=path.velocityY
-    car.setCollider('rectangle',0,0,70,40)
+    car.setCollider('rectangle',0,0,50,90)
     car.visible=true
 
     if (car.isTouching(car)){
       car.destroy();
     }
-    
-
     }
 
         
